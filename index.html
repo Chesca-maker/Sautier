@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sautier</title>
+    <link rel="stylesheet" href="CSS/style.css" />
+    <link rel="icon" href="IMG/2072130.png">
+    <style>
+    .information {
+      margin-top: 50px;
+      margin-left: 138px;
+      font-family: arial;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    .navigation1 ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #341539;
+      font-family: arial;
+    }
+
+    .navigation1 ul li {
+      float: left;
+    }
+
+    .navigation1 ul li a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 11px 19px;
+      text-decoration: none;
+    }
+
+    .navigation1 div {
+      font-size: 26px;
+      color: white;
+      position: fixed;
+      top: 5px;
+      margin-left: 81px;
+      left: 50%;
+      margin-top: 0px;
+    }
+
+    .navigation1 ul li a.active1 {
+      background-color: #8968CD;
+    }
+
+    .navigation1 ul li a.active2 {
+      background-color: #604B62;
+      border: 0px solid #604B62;
+    }
+
+    .navigation1 ul {
+      position: fixed;
+      top: 0;
+      width: 100%;
+    }
+
+    .navigation1 ul li a:hover {
+      transition: background-color 1s;
+      background-color: #DAB1DA;
+      color: black;
+    }
+
+    .navigation2 ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      background-color: #341539;
+      position: fixed;
+      height: 100%;
+      top: 40px;
+      width: 129px;
+      overflow: auto;
+      font-family: arial;
+    }
+
+    .navigation2 li a {
+      display: block;
+      color: white;
+      padding: 8px 14px;
+      text-decoration: none;
+      transition: border-left 0.6s;
+    }
+
+    .navigation2 li a:hover {
+      background-color: #DAB1DA;
+      color: black;
+      border-left: 7px solid #8968CD;
+      border-radius: 25px;
+    }
+
+    .information {
+      margin-top: 50px;
+      margin-left: 138px;
+      margin-right: 10px;
+      font-family: arial;
+    }
+
+    .container {
+      width: 100%;
+      height: 0vh;
+      background-image: linear-gradient(rgba(0,0,50,0,8),rgba(0,0,50,0,8)), url();
+      background-position: center;
+      background-size: cover;
+      position: fixed;
+      margin-left: 61px;
+      font-family: arial;
+    }
+
+    #connexion {
+      display: none;
+    }
+
+    .form-box {
+      width: 60%;
+      max-width: 450px;
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%,20%);
+      background: #DAB1DA;
+      border-radius: 30px;
+      padding: 5px 25px 20px;
+      text-align: center;
+    }
+
+    .form-box h1 {
+      font-size: 30px;
+      margin-bottom: 15px;
+      color: #3c00a0;
+      position: relative;
+    }
+
+    .message {
+      font-size: 15px;
+      margin-bottom: 19px;
+      color: #3c00a0;
+      position: relative;
+    }
+
+    .form-box::after {
+      content: '';
+      width: 30px;
+      background: #3c00a0;
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%);
+    }
+
+    .submit-field input.submitBtn1 {
+      flex-basis: 48%;
+      background: #3c00a0;
+      padding: 6px 20px;
+      font-size: 13px;
+      color: #fff;
+      border-radius: 26px;
+      border: 0;
+      outline: 0;
+      cursor: pointer;
+    }
+
+    .submit-field input.submitBtn2 {
+      flex-basis: 48%;
+      background: #3c00a0;
+      padding: 6px 20px;
+      font-size: 13px;
+      color: #fff;
+      border-radius: 26px;
+      border: 0;
+      outline: 0;
+      cursor: pointer;
+      transition: background-color 1s;
+    }
+
+    .fgt-field input.fgtbtn1 {
+      margin-top: 9px;
+      flex-basis: 48%;
+      background: #3c00a0;
+      padding: 6px 20px;
+      font-size: 19px;
+      color: #fff;
+      border-radius: 26px;
+      border: 0;
+      outline: 0;
+      cursor: pointer;
+    }
+
+    .submit-field input.submitBtn1:hover {
+      flex-basis: 48%;
+      background: #341539;
+      padding: 6px 20px;
+      font-size: 13px;
+      color: #fff;
+      border-radius: 26px;
+      outline: 0;
+      cursor: pointer;
+      transition: border 1s, background-color 1s;
+      border-left: 7px solid #8968CD;
+      border-right: 7px solid #8968CD;
+    }
+
+    .submit-field input.submitBtn2:hover {
+      flex-basis: 48%;
+      background: #341539;
+      padding: 6px 20px;
+      font-size: 13px;
+      color: #fff;
+      border-radius: 26px;
+      border: 0;
+      outline: 0;
+      cursor: pointer;
+    }
+
+    .fgt-field input.fgtbtn1:hover {
+      margin-top: 9px;
+      flex-basis: 48%;
+      background: #E4A0F7;
+      padding: 6px 20px;
+      font-size: 19px;
+      color: black;
+      border-radius: 26px;
+      border: 0;
+      outline: 0;
+      cursor: pointer;
+      transition: border 1s, background-color 1s;
+      border-left: 7px solid #341539;
+      border-right: 7px solid #341539;
+    }
+
+    .input-field1 {
+      background: #fff;
+      margin: 6px 2px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      max-height: 65px;
+      transition: max-height 0.5s;
+      overflow: hidden;
+      style: none;
+    }
+
+    .input-field2 {
+      background: #fff;
+      margin: 6px 2px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      max-height: 65px;
+      transition: max-height 0.5s;
+      overflow: hidden;
+    }
+
+    .email-field1 {
+      background: #fff;
+      margin: 6px 2px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      max-height: 65px;
+      transition: max-height 0.5s;
+      overflow: hidden;
+      style: none;
+    }
+
+    .psw1-field1 {
+      background: #fff;
+      margin: 6px 2px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      max-height: 65px;
+      transition: max-height 0.5s;
+      overflow: hidden;
+      style: none;
+    }
+
+    .psw2-field1 {
+      background: #fff;
+      margin: 6px 2px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      max-height: 65px;
+      transition: max-height 0.5s;
+      overflow: hidden;
+      style: none;
+    }
+
+    #input-group2 {
+      display: none;
+    }
+
+    input {
+      width: 100%;
+      background: transparent;
+      border: 0;
+      outline: 0;
+      padding: 10px 12px;
+    }
+
+    .btn-field1 {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      margin-left: 27.2%;
+    }
+
+    .btn-field2 {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      margin-left: 27.2%;
+    }
+
+    .btn-field1 input {
+      margin: 6px 2px;
+      flex-basis: 46%;
+      background: #3c00a0;
+      padding: 6.5px 25px;
+      color: #fff;
+      border-radius: 20px;
+      border: 0;
+      outline: 0;
+      cursor: pointer;
+      font-size: 11px;
+      transition: background 1.3s;
+      transition: color 1.3s;
+    }
+
+    .btn-field2 input {
+      margin: 6px 2px;
+      flex-basis: 46%;
+      background: #3c00a0;
+      padding: 6.5px 25px;
+      color: #fff;
+      border-radius: 20px;
+      border: 0;
+      outline: 0;
+      cursor: pointer;
+      font-size: 11px;
+      transition: background 1.3s;
+      transition: color 1.3s;
+    }
+
+    .btn-field1 input:hover {
+      margin: 6px 2px;
+      transition: background-color 1s;
+      background-color: #341539;
+    }
+
+    .btn-field2 input:hover {
+      margin: 6px 2px;
+      transition: background-color 1s;
+      background-color: #341539;
+    }
+
+    .invalid {
+      color: red;
+      font-size: 12px;
+    }
+
+    .greeting {
+      font-family: arial;
+      color: #E4A0F7;
+      background-color: black;
+      padding: 7px;
+      border-radius: 30px;
+      font-size: 20px;
+      text-align: center;
+    }
+
+    .pgtitle {
+      text-align: center;
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    h3 {
+      text-align: center;
+    }
+
+    .message {
+      display: none;
+    }
+
+    .message1 {
+      display: none;
+    }
+
+    .message2 {
+      display: none;
+    }
+
+    .message3 {
+      display: none;
+    }
+
+    .opt2 {
+      pointer-events: none;
+      background-color: grey;
+    }
+
+    .opt3 {
+      pointer-events: none;
+      background-color: grey;
+    }
+
+    .opt4 {
+      pointer-events: none;
+      background-color: grey;
+    }
+
+    .opt7 {
+      pointer-events: none;
+      background-color: grey;
+    }
+    .opt8 {
+      pointer-events: none;
+      background-color: grey;
+    }
+    .opt9 {
+      pointer-events: none;
+      background-color: grey;
+    }
+    .opt10 {
+      pointer-events: none;
+      background-color: grey;
+    }
+    .opt11 {
+      pointer-events: none;
+      background-color: grey;
+    }
+    .opt12 {
+      pointer-events: none;
+      background-color: grey;
+    }
+    .opt13 {
+      pointer-events: none;
+      background-color: grey;
+    }
+    .opt14 {
+      pointer-events: none;
+      background-color: grey;
+    }
+    .opt15 {
+      pointer-events: none;
+      background-color: grey;
+    }
+    </style>
+    </head>
+    <body>
+      <div class="navigation1" id="navigation1">
+        <nav>
+          <ul>
+            <li><a class="active1" href="file:///Users/eah28chra/Desktop/Dévelopement%20web/Entreprise%20Sautier%20de%20site%20web%20de%20Chesca/index.html"
+              id="opt1">Home</a></li>
+            <li><a href="#news" id="opt2">News</a></li>
+            <li><a href="#contact" id="opt3">Contact</a></li>
+            <li><a href="#about" id="opt4">About</a></li>
+            <li><div id="opt6">Sautier</div></li>
+            <li style="float:right"><a class="active2" href="#login" onclick="myFunction()">Inscire</a></li>
+          </ul>
+        </nav>
+      </div>
+      <nav class="navigation2" id="navigation2">
+        <ul>
+          <li><a href="HTML/page1.html" id="opt7">Mercure</a></li>
+          <li><a href="HTML/page1.html" id="opt8">Vénus</a></li>
+          <li><a href="HTML/page3.html" id="opt9">Terre</a></li>
+          <li><a href="HTML/page4.html" id="opt10">Mars</a></li>
+          <li><a href="HTML/page5.html" id="opt11">Jupitère</a></li>
+          <li><a href="HTML/page6.html" id="opt12">Saturne</a></li>
+          <li><a href="HTML/page7.html" id="opt13">Uranus</a></li>
+          <li><a href="HTML/page8.html" id="opt14">Neptune</a></li>
+          <li><a href="HTML/page9.html" id="opt15">Bibliographie</a></li>
+        </ul>
+      </nav>
+      <br>
+      <br>
+      <br>
+      <section id="connexion">
+        <div class="container" id="container">
+          <div class="form-box" id="form-box">
+            <h1 id="title" class="title">Inscription</h1>
+            <form action="file:///Users/eah28chra/Desktop/Dévelopement%20web/Entreprise%20Sautier%20de%20site%20web%20de%20Chesca/index.html" id="form1">
+              <div class="input-group1" id="input-group1">
+
+                <div class="input-field1">
+                  <input type="text" placeholder="Nom d'utilisateur" id="namefield" class="namefield" required>
+                </div>
+                <span><p id="message" class="message">Il n'y a pas de nom!</p></span>
+
+                <div class="email-field1">
+                  <input type="email" placeholder="Email" id="email1" class="email1" required>
+                </div>
+                <span><p id="message1" class="message1">Il n'y a pas d'arobase!</p></span>
+
+                <div class="psw1-field1">
+                  <input type="password" placeholder="Mot de passe" id="pass1" class="pass1" required>
+                </div>
+                  <span><p id="message2" class="message2">Les mots de passes ne sont pas pareil!</p></span>
+
+                <div class="psw2-field1" id="pass">
+                  <input type="password" placeholder="Confirmer mot de passe" id="pass2" class="pass2" required>
+                </div>
+                  <span><p id="message3" class="message3">Les mots de passes ne sont pas pareil!</p></span>
+
+                <div class="submit-field" id="submit-field">
+                  <input type="submit" id="submitBtn1" class="submitBtn1" value="S'inscrire"></input>
+                </div>
+              </div>
+
+              <div class="fgt-field">
+                <input type="reset" id="fgtbtn1" class="fgtbtn1" value="Oublie moi"></input>
+              </div>
+
+              <div class="btn-field1">
+                <input type="button" id="signinBtn" value="Connexion"></input>
+              </div>
+            </form>
+            <form action="#">
+              <div class="input-group2" id="input-group2">
+                <div>
+                  <div class="message" id="meassagepsw2">Bienvenue à Sautier</div>
+                </div>
+
+                <div class="input-field2">
+                  <input type="email" placeholder="Email" id="email2" required>
+                </div>
+
+                <div class="input-field2">
+                  <input type="password" placeholder="Password" id="pass3" required>
+                </div>
+
+                <div class="submit-field" id="submit-field">
+                  <input type="submit" class="submitBtn2" id="submitBtn2" value="Se connecter"></input>
+                </div>
+
+                <div class="btn-field1">
+                  <input type="button" id="signupBtn" value="Inscription"></input>
+                </div>
+              </div>
+            </form>
+        </div>
+      </section>
+      <div class="information" id="information">
+          <h1 class="pgtitle">Sautier</h1>
+        <h2>Bienvenue au site web des lunes, l'environnement et la structure
+          des planètes dans notre système solaire.</h2>
+          <h3 class="greeting">Bienvenue!</h3>
+      </div>
+
+      <script>
+      let signupBtn = document.getElementById("signupBtn");
+      let signinBtn = document.getElementById("signinBtn");
+      let title = document.getElementById("title");
+      let submitBtn2 = document.getElementById("submitBtn2");
+      let inputgroup1 = document.getElementById("input-group1");
+      let inputgroup2 = document.getElementById("input-group2");
+      let opt2 = document.getElementById("opt2");
+      let opt3 = document.getElementById("opt3");
+      let opt4 = document.getElementById("opt4");
+      let opt7 = document.getElementById("opt7");
+      let opt8 = document.getElementById("opt8");
+      let opt9 = document.getElementById("opt9");
+      let opt10 = document.getElementById("opt10");
+      let opt11 = document.getElementById("opt11");
+      let opt12 = document.getElementById("opt12");
+      let opt13 = document.getElementById("opt13");
+      let opt14 = document.getElementById("opt14");
+      let opt15 = document.getElementById("opt15");
+
+    // Changement de "se connecter" et "s'inscrire"
+      signinBtn.onclick = function(){
+        title.innerHTML = "Connexion";
+        inputgroup2.style.display = "block";
+        inputgroup1.style.display = "none";
+        signinBtn.style.display = "none";
+        signupBtn.style.display = "block";
+        signupBtn.classList.add("signupBtn");
+      }
+
+      signupBtn.onclick = function(){
+        title.innerHTML = "Connexion";
+        inputgroup2.style.display = "none";
+        inputgroup1.style.display = "block";
+        signinBtn.style.display = "block";
+        signupBtn.style.display = "none";
+        signupBtn.classList.add("signupBtn");
+      }
+      // Changement de "Login" et "Home"
+      function myFunction(){
+        var x = document.getElementById('connexion');
+        var y = document.getElementById('information');
+        if (x.style.display === 'none') {
+          x.style.display = 'block';
+          y.style.display = 'none';
+        } else {
+          x.style.display = 'none';
+          y.style.display = 'block';
+        }
+      }
+    // Analyser les mots de passes sont les mêmes
+
+      const form = document.querySelector("form"),
+      emailField1 = form.querySelector(".email-field1"),
+      emailInput1 = emailField1.querySelector(".email1"),
+      passField1 = form.querySelector(".psw1-field1"),
+      passInput1 = passField1.querySelector(".pass1"),
+      cPassField1 = form.querySelector(".psw2-field1"),
+      cPassInput1 = cPassField1.querySelector(".pass2");
+
+      function nomutilisateur() {
+        let namefield = document.getElementById("namefield").value;
+        let message = document.getElementById("message");
+
+        if(namefield.length != 0){
+            message.classList.remove("invalid");
+            passField1.classList.remove("invalid");
+            message.style.display = 'none';
+          }
+          else {
+            message.classList.add("invalid");
+            passField1.classList.add("invalid");
+            message.style.display = 'block';
+          }
+      }
+
+      function arobase(){
+        const passwordInp = document.querySelector(".email1");
+        const message = document.querySelectorAll(".message1");
+
+        const requirements = [
+          { regex: /[@]/}
+        ]
+
+        passwordInp.addEventListener("keyup", () => {
+          requirements.forEach((item, i) => {
+
+            let isValid = item.regex.test(passwordInp.value);
+
+            if(message[i].length != 0){
+              if(isValid) {
+                message[i].classList.remove("invalid");
+                emailField1.classList.remove("invalid");
+                message[i].style.display = 'none';
+              } else{
+                message[i].classList.add("invalid");
+                emailField1.classList.remove("invalid");
+                message[i].style.display = 'block';
+              }
+            }
+          })
+        })
+      }
+
+      function validate1(){
+        let password = document.getElementById("pass1").value;
+        let cnfrmPassword = document.getElementById("pass2").value;
+        let message = document.getElementById("message2");
+
+        if(password.length != 0){
+          if(password == cnfrmPassword){
+            message.classList.remove("invalid");
+            passField1.classList.remove("invalid");
+            message.style.display = 'none';
+          }
+          else {
+            message.classList.add("invalid");
+            passField1.classList.add("invalid");
+            message.style.display = 'block';
+          }
+        }
+      }
+
+      function validate2(){
+        let password = document.getElementById("pass1").value;
+        let cnfrmPassword = document.getElementById("pass2").value;
+        let message = document.getElementById("message3");
+
+        if(cnfrmPassword.length != 0){
+          if(password == cnfrmPassword){
+            message.classList.remove("invalid");
+            cPassField1.classList.remove("invalid");
+            message.style.display = 'none';
+          }
+          else {
+            message.classList.add("invalid");
+            cPassField1.classList.add("invalid");
+            message.style.display = 'block';
+          }
+        }
+      }
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        arobase();
+        validate1();
+        validate2();
+
+        emailInput1.addEventListener("keyup", arobase);
+        passInput1.addEventListener("keyup", validate1);
+        cPassInput1.addEventListener("keyup", validate2);
+
+        if (
+          !emailField1.classList.contains("invalid") &&
+          !passField1.classList.contains("invalid") &&
+          !cPassField1.classList.contains("invalid")
+        ) {
+          location.href = form.getAttribute("action");
+          localStorage.setItem('name', getName.value);
+
+          nameDisplayCheck();
+        }
+      });
+
+      const greeting = document.querySelector('.greeting');
+      const greeting2 = document.querySelector('.title');
+      const rememberMe = document.querySelector('.input-group1');
+      const getName = document.querySelector('#namefield');
+      const submitBtn = document.querySelector('#submitBtn1');
+      const forgetMe = document.querySelector('#fgtbtn1');
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+      });
+
+      forgetMe.addEventListener("click", function () {
+        localStorage.removeItem("name");
+
+        nameDisplayCheck();
+      });
+
+      function nameDisplayCheck() {
+
+        if(localStorage.getItem('name')) {
+          let name = localStorage.getItem('name');
+          greeting.textContent = `${name}`;
+          greeting2.textContent = `Bonjour ${name}! Vous êtes déjà connecté. Oublie-toi?`;
+          greeting2.style.color = '#341539';
+          forgetMe.style.display = 'block';
+          rememberMe.style.display = 'none';
+          opt2.classList.add("opt2");
+          opt2.classList.remove("opt2");
+          opt3.classList.remove("opt3");
+          opt4.classList.remove("opt4");
+          opt7.classList.remove("opt7");
+          opt8.classList.remove("opt8");
+          opt9.classList.remove("opt9");
+          opt10.classList.remove("opt10");
+          opt11.classList.remove("opt11");
+          opt12.classList.remove("opt12");
+          opt13.classList.remove("opt13");
+          opt14.classList.remove("opt14");
+          opt15.classList.remove("opt15");
+        } else {
+          greeting.textContent = '';
+          greeting2.textContent = 'Inscription';
+          forgetMe.style.display = 'none';
+          rememberMe.style.display = 'block';
+          opt2.classList.add("opt2");
+          opt3.classList.add("opt3");
+          opt4.classList.add("opt4");
+          opt7.classList.add("opt7");
+          opt8.classList.add("opt8");
+          opt9.classList.add("opt9");
+          opt10.classList.add("opt10");
+          opt11.classList.add("opt11");
+          opt12.classList.add("opt12");
+          opt13.classList.add("opt13");
+          opt14.classList.add("opt14");
+          opt15.classList.add("opt15");
+        }
+      }
+
+      document.body.onload = nameDisplayCheck;
+      console.log(localStorage.getItem('name'));
+      </script>
+    </body>
+
+</html>

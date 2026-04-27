@@ -1,0 +1,95 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.navigation1 ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #341539;
+  font-family: arial;
+}
+
+.navigation1 ul li {
+  float: left;
+}
+
+.navigation1 ul li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 11px 19px;
+  text-decoration: none;
+}
+
+.navigation1 div {
+  font-size: 26px;
+  color: white;
+  position: fixed;
+  top: 5px;
+  margin-left: 81px;
+  left: 50%;
+  margin-top: 0px;
+}
+
+.navigation1 ul li a.active1 {
+  background-color: #8968CD;
+}
+
+.navigation1 ul li a.active2 {
+  background-color: #604B62;
+  border: 0px solid #604B62;
+}
+
+.navigation1 ul {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.navigation1 ul li a:hover {
+  transition: background-color 1s;
+  background-color: #DAB1DA;
+  color: black;
+}
+
+.navigation2 ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background-color: #341539;
+  position: fixed;
+  height: 100%;
+  top: 40px;
+  width: 129px;
+  overflow: auto;
+  font-family: arial;
+}
+
+.navigation2 li a {
+  display: block;
+  color: white;
+  padding: 8px 14px;
+  text-decoration: none;
+  transition: border-left 0.6s;
+}
+
+.navigation2 li a:hover {
+  background-color: #DAB1DA;
+  color: black;
+  border-left: 7px solid #8968CD;
+  border-radius: 25px;
+}
+
+.information {
+  margin-top: 50px;
+  margin-left: 138px;
+  margin-right: 10px;
+  font-family: arial;
+}
+
+#information {
+  display: block;
+}
